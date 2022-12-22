@@ -33,7 +33,7 @@ function App() {
 
   const handleRemoveRepo = (id) => {
 
-    setRepos(repos.filter(repo => repo.id != id));
+    setRepos(repos.filter(repo => repo.id !== id));
     
   }
 
