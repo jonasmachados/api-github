@@ -9,3 +9,14 @@ export const Container = styled.div`
     align-items: center;
     justify-content: flex-start;
 `
+
+export const Nav = styled.div`
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 450px){
+        margin-left: 10%;
+    }
+ 
+`
+

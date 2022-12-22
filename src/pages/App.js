@@ -6,6 +6,9 @@ import ItemRepo from '../components/ItemRepo';
 import { api } from '../services/api';
 
 import { Container } from './styles';
+import { Nav } from './styles';
+
+import styled from "styled-components";
 
 function App() {
 
@@ -34,12 +37,19 @@ function App() {
   const handleRemoveRepo = (id) => {
 
     setRepos(repos.filter(repo => repo.id !== id));
-    
+
   }
 
   return (
     <Container>
-      <img src={gitLogo} width={72} height={72} alt="github logo" />
+      <Nav>
+        <div>
+          <img src={gitLogo} width={72} height={72} alt="github logo" />
+        </div>
+        <DivH1>
+          <h1>WIKI Repositório GitHub</h1>
+        </DivH1>
+      </Nav>
       <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)} />
       <Button onClick={handleSearchRepo} />
       {repos.map(repo => <ItemRepo handleRemoveRepo={handleRemoveRepo} repo={repo} />)}
@@ -48,3 +58,8 @@ function App() {
 }
 
 export default App;
+
+export const DivH1 = styled.div`
+    padding-left: 20px;
+    align-items: center;
+`
